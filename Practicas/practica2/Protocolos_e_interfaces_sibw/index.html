@@ -1,0 +1,401 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Protocolos e Interfaces</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/tomorrow-night.css">
+
+		<style>
+			h1, h2, h3 {
+				color: Crimson !important;
+				padding-bottom: 0.25em !important;
+			}
+			p {
+  			 font-size: 90% !important;
+  			 text-align: left;
+			 padding-bottom: 0.2em !important;
+  		 }
+
+		 strong {
+		  color: turquoise;
+		 }
+
+		 th {
+  			color:white;
+  			background-color: palevioletred;
+  		 }
+
+		 ul {
+			 font-size: 75% !important;
+			 margin-left: -5% !important;
+		 }
+		 li {
+			 padding-bottom: 0.75em !important;
+		 }
+
+		 code {
+			 font-weight: bold !important;
+			 color: #ffcccc;
+		 }
+
+		 footer {
+		  position: absolute !important;
+				bottom: -40px !important;
+				right: 1em !important;
+				font-size: 0.8em !important;
+	  }
+		</style>
+
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="images/webdevelop.jpeg">
+					<h3 style="color:tomato">
+						 Protocolos, &nbsp; Interfaces:</h3>
+					<h4 style="color:tomato">
+						 Navegador &lt;&#8212;&gt; servidor web &lt;&#8212;&gt; aplicación web</h4>
+					<p>
+						<small><a href="http://www.ugr.es/~jmguirao">José Ma. Guirao</a>
+							<a href="mailto://jmguirao@ugr.es">jmguirao@ugr.es</a></small>
+					</p>
+
+				</section>
+
+				<section>
+					<h4><strong>H</strong>iper<strong>T</strong>ext <strong>T</strong>ransfer <strong>P</strong>rotocol</h4>
+					<p>Es un protocolo ASCII, para comunicar clientes y servidores</p>
+						<img src="images/http_diagram.png" style="width:640px;height:380px;">
+
+					<footer>
+						<small><strong>F12 &gt; Red</strong>  &nbsp; para ver las cabeceras</small>
+					</footer>
+				</section>
+
+				<section>
+					<h3>Tipos de peticiones &nbsp; HTTP</h3>
+					<p>
+						en la 'request line', a veces se llaman "verbos"
+					</p>
+					<ul>
+						<li><strong>GET</strong>&nbsp;&nbsp;solicitar un recurso del servidor</li>
+						<li><strong>POST</strong>&nbsp;&nbsp;crear un nuevo recurso</li>
+						<li><strong>PUT</strong>&nbsp;&nbsp;modificar un recurso existente</li>
+						<li><strong>DELETE</strong>&nbsp;&nbsp;borrar un recurso</li>
+					</ul>
+					<br/>
+					<footer >
+						<a href="http://net.tutsplus.com/tutorials/tools-and-tips/http-the-protocol-every-web-developer-must-know-part-1/" >
+							HTTP: The Protocol Every Web Developer Must Know</a>
+					</footer>
+				</section>
+
+				<section>
+					<h3>Petición <strong>GET</strong></h3>
+					<p>
+						En la misma <strong style="color:pink;">&nbsp;URL&nbsp;</strong>
+					   se incluyen los parámetros de la  query
+					</p>
+					<pre><code data-trim language="bash">
+							GET resource_path+query en el URL
+					</code></pre>
+					<img src="images/url.png">
+					<footer>
+						<a href="http://en.wikipedia.org/wiki/Uniform_resource_locator">
+						Uniform Resource Locator</a>
+					</footer>
+
+				</section>
+				<section>
+					<h3>Petición <strong>POST</strong></h3>
+					<p>
+						Los parámetros de la query van como contenido
+						en el requerimiento después de todas las cabeceras
+					</p>
+					<br />
+					<pre><code data-trim language="bash">
+						POST /recepcion_formulario  HTTP/1.1
+						Host: ...
+						...
+						resto cabeceras http
+						...
+						variable_1 = valor_variable_1
+						variable_2 = valor_variable_2
+						...
+					</code></pre>
+					<footer>
+					</footer>
+				</section>
+
+
+				<section>
+					<h3>Cabeceras HTTP</h3>
+					<p>
+						Algunas cabeceras interesantes, en el requerimiento
+					</p>
+					<pre><code data-trim language="bash" style="font-size:70%">
+				Date: Thu Feb  18 08:49:37 2016
+				Accept: */*
+				Accept-Encoding: compress, gzi
+				Accept-Language: en-US; es-ES
+				Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==
+				Cookie: $Version=1; Skin=new;
+				Host: en.wikipedia.org
+				Referer: http://en.wikipedia.org/wiki/Main_Page
+				User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/21.0
+				If-Modified-Since : HTTP-date
+					</code></pre>
+
+					<footer>
+						<a href="http://www.tutorialspoint.com/http/http_header_fields.htm" >
+							HTTP headers fields</a>
+					</footer>
+				</section>
+
+				<section>
+					<h3>Respuesta HTTP</h3>
+
+					<pre><code data-trim language="bash">
+						Status: 200 OK
+					</code></pre>
+					<br/>
+					<p>
+						Cabeceras:
+					</p>
+					<pre><code data-trim language="bash">
+						Content-Encoding: gzip
+						Content-Length: 348
+						Content-Type: text/html; charset=utf-8
+						Set-Cookie: UserID=JohnDoe; Max-Age=3600; Version=1
+				  		(salto de linea antes del contenido)
+					</code></pre>
+
+					<footer>
+						<a href="http://www.tutorialspoint.com/http/http_header_fields.htm" >
+							HTTP headers fields</a>
+						</footer>
+				</section>
+
+				<section>
+					<h3>Cookies</h3>
+					<p>
+						<a href="http://en.wikipedia.org/wiki/HTTP_Cookie">Cookies</a>: información que el servidor guarda en el navegador
+					</p>
+					<img src="images/cookie_exchange.png" style="height:400px">
+					<p>
+						Cuando el navegador se vuelve a conectar con el servidor, le reenvia todas las cookies previamente enviadas por este
+					</p>
+				</section>
+
+				<section>
+				   <h3>Sesiones</h3>
+					<p>
+						<strong>HTTP</strong> es un protocolo que no guarda el estado de la conexión. La manera
+						usual de (re)tener la información de conexión es con <strong>sesiones</strong>, una combinación
+						de cookie y almacenamiento en el servidor
+					</p>
+					<img src="images/the_truth_about_sessions_1.png"  height="380px">
+				</section>
+
+				<section>
+					<h3>Interface con el servidor web</h3>
+					<p>
+						Hay varias posibilidades para conectar la aplicación web con el servidor web:
+					</p>
+					<table> <tr>
+						<td width="40%">
+					<table>
+						<tr>
+							<td>
+				      		<a href="http://en.wikipedia.org/wiki/Common_Gateway_Interface">CGI</a>,</li>
+							</td>
+				 	</tr>
+				   <tr>
+						<td>
+							<a href="http://www.fastcgi.com/drupal/">FastCGI</a>, &nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="http://php.net/manual/es/security.apache.php">mod_php</a>, &nbsp;
+							<a href="http://en.wikipedia.org/wiki/Mod_python">mod_python,</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="http://en.wikipedia.org/wiki/Web_Server_Gateway_Interface">WSGI</a>, ...</li>
+				  	</td>
+				 </tr>
+				</table>
+				</td>
+
+				<td width="60%" style="background-image:url('images/grlvXUA.png');background-repeat: no-repeat;">
+
+				</td>
+
+				</tr></table>
+
+				<br/>
+					<footer>
+						<a href="http://docs.python.org/2/howto/webservers.html" >
+							HOWTO Use Python in the web</a>
+						</footer>
+				</section>
+
+				<section>
+					<h3><strong>C</strong>ommon &nbsp; <strong>G</strong>ateway &nbsp; <strong>I</strong>nterface</h3>
+
+					La manera más simple (y más lenta) de ejecutar programas desde el servidor web
+					<table><tr>
+						<td  width="60%" style="background-image:url('images/cgi2.png');background-repeat: no-repeat;">
+
+						</td>
+						<td width="40%" style="font-size:0.9em">
+							Comunicación entre CGI y el servidor por la salida estándar
+							<br/>
+							<br/>Entre el servidor
+							y el programa: entrada estandar y
+							<a href="http://www.perlfect.com/articles/cgi_env.shtml">variables CGI</a> (para los headers)
+						</td>
+					</tr>
+					</table>
+
+					<footer>
+						<a href="http://docs.python.org/3.3/library/cgi.html" >
+							Common Gateway Interface support</a>
+					</footer>
+				</section>
+
+				<section>
+					<h3><strong>C</strong>ommon &nbsp; <strong>G</strong>ateway &nbsp; <strong>I</strong>nterface</h3>
+
+					<p>Por salida estandar <strong>print</strong></p>
+					<pre><code data-trim language="python">
+				#--------------------------
+				#  Hello world CGI
+				#---------------------------
+
+				# DOS saltos de línea (última cabecera del protocolo HTTP)
+				print ("""Content-Type: text/html
+
+				&lt;html&gt;
+				&lt;body&gt;
+				&lt;h2&gt;Hello World!&lt;/h2&gt;
+				&lt;/body&gt;
+				&lt;/html&gt;
+				""")
+					</code></pre>
+					<footer>
+						<a href="http://webpython.codepoint.net/cgi_tutorial" >
+						CGI Tutorial</a>
+					</footer>
+				</section>
+
+				<section>
+					<h3><strong>C</strong>ommon &nbsp; <strong>G</strong>ateway &nbsp; <strong>I</strong>nterface</h3>
+					<p>Entrada de datos</p>
+					<pre><code data-trim language="python">
+				#--------------------------
+				#  Forms
+				#---------------------------
+
+
+				print ("""Content-Type: text/html
+
+				&lt;html>&lt;body&gt;
+				&lt;form method="get" &gt;
+				Name: &lt;input type="text" name="name"&gt;
+				&lt;input type="submit" value="Submit"&gt;
+				&lt;/form&gt;
+
+				""")
+
+				import os
+
+				querystring = os.getenv('QUERY_STRING ', default_value)
+				datos = querystring.split('&')
+				...
+
+				if name:
+				   print ("""
+				   &lt;p&gt;The submitted name was "%s"&lt;/p&gt;
+				   """ % name)
+
+				print ("&lt;/body&gt;&lt;/html&gt;")
+
+					</code></pre>
+
+					<footer class="der">
+						<a href="http://webpython.codepoint.net/cgi_form" >
+							CGI Tutorial</a>
+						</footer>
+				</section>
+
+				<section>
+					<h3><strong>C</strong>ommon &nbsp; <strong>G</strong>ateway &nbsp; <strong>I</strong>nterface</h3>
+
+					<p><strong>Ventajas CGI:</strong></p>
+					<ul>
+				  		<li>Simple y neutral (salida/salida estándar, variables de entorno).</li>
+				  		<li>Funciona en cualquier servidor de web.</li>
+					</ul>
+					<br/><br/>
+					<p>
+						<strong>Inconvenientes CGI:</strong>
+					</p>
+					<ul>
+						<li>Se crea un nuevo proceso en cada llamada (con el intérprete incrustado).</li>
+						<li>No hereda el estado de llamadas anteriores (reconectar la BD...).</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>apache mod_php</h3>
+					<img src="images/apache_prefork_mod_php.jpg" />
+					<footer>
+						<a href="https://docs.joomla.org/Should_PHP_run_as_a_CGI_script_or_as_an_Apache_module%3F">
+							Should PHP run as a CGI script or as an Apache module?</a>
+					</footer>
+				</section>
+
+
+
+
+
+
+
+				<!-- <section data-markdown>
+					<textarea data-template>
+							Esto es data-markdown
+							* 1
+							* 2
+					</textarea>
+				</section> -->
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

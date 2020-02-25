@@ -1,0 +1,41 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>MODIFICAR COMENTARIO - Museo del Automovil</title>
+<link rel="stylesheet" href="css/estiloForm.css">
+</head>
+
+<header>
+    <!-- LOGO CABECERA-->
+    <div id="cabecera">
+      <center><a href="index.php"><img id="titulo-cab" src="imagenes/logonuevo2.png"></a></center>
+    </div>
+</header>
+
+<body>
+<div class="group">
+  <form action="Controlador/modificarComentario.php" method="POST">
+  <h2><em>- Modificar Comentario -</em></h2> 
+      <label for="userModificar">Modificar comentario del usuario: <span><em>(*)</em></span></label>
+      <input type="text" name="userModificar" class="form-input" required/>   
+    
+      <label for="coment">Nuevo Comentario: <span><em>(*)</em></span></label>
+      <input type="text" name="coment" id="form-input2" />
+
+      <p>(*) Obligatorio</p>
+     <center> <input class="form-btn" name="submit" type="submit" value="Modificar" /></center>
+    </p>
+  </form>
+</div>
+</body>
+
+<footer><!-- PIE DE PAGINA -->
+        <!--<input type="button" value="Imprime esta pagina" onclick="window.print()">-->
+        <p>&copyMuseo del automovil</p>
+        <p>Calle Periodista Daniel Saucedo Aranda, s/n • 18071 Granada </p>
+        <p>958 24 28 02 • e-mail: ars@correo.ugr.es</p>
+        <p><img id="footLogo" src="imagenes/footer.png"></p>
+    <p id="museo">Museo del automovil</p>
+</footer>
+
+</html>

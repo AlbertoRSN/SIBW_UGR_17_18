@@ -1,0 +1,17 @@
+html{
+  font-family: "Times New Roman", Times, serif;
+  text-align: justify;
+  margin-right: 15%;
+  margin-left: 15%;
+  background-color: white;
+}
+
+#logo-cab{
+  float: right;
+  width: 15%;
+  height: 15%;
+}
+
+#footLogo, #Fotos_obra, a{
+  display: none;
+}

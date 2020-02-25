@@ -1,0 +1,55 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>MODIFICAR DATOS - Museo del Automovil</title>
+<link rel="stylesheet" href="css/estiloForm.css">
+</head>
+
+<header>
+    <!-- LOGO CABECERA-->
+    <div id="cabecera">
+      <center><a href="index.php"><img id="titulo-cab" src="imagenes/logonuevo2.png"></a></center>
+    </div>
+</header>
+
+<body>
+<div class="group">
+  <form action="Controlador/modificar.php" method="POST">
+  <h2><em>- Modificar Datos de Usuario -</em></h2> 
+      <label for="nombre2">Nombre <span><em>(requerido)</em></span></label>
+      <input type="text" name="nombre" class="form-input" required/>   
+    
+      <label for="apellido2">Apellidos <span><em>(requerido)</em></span></label>
+      <input type="text" name="apellido" class="form-input" required/>         
+      
+      <label for="user">Usuario <span><em>(requerido)</em></span></label>
+      <input type="text" name="user" class="form-input" />
+
+      <label for="email2">Email <span><em>(requerido)</em></span></label>
+      <input type="email" name="email2" class="form-input" />
+
+      <label for="email2">Repite Nuevo Email <span><em></em></span></label>
+      <input type="email" name="email2" class="form-input" />
+
+      <label for="pass2">Contraseña <span><em>(requerido)</em></span></label>
+      <input type="password" name="pass2" class="form-input" />
+
+      <label for="pass2">Repite Contraseña <span><em></em></span></label>
+      <input type="password" name="pass2" class="form-input" />
+
+     <center> <input class="form-btn" name="submit" type="submit" value="Modificar" /></center>
+    </p>
+  </form>
+</div>
+</body>
+
+<footer><!-- PIE DE PAGINA -->
+        <!--<input type="button" value="Imprime esta pagina" onclick="window.print()">-->
+        <p>&copyMuseo del automovil</p>
+        <p>Calle Periodista Daniel Saucedo Aranda, s/n • 18071 Granada </p>
+        <p>958 24 28 02 • e-mail: ars@correo.ugr.es</p>
+        <p><img id="footLogo" src="imagenes/footer.png"></p>
+    <p id="museo">Museo del automovil</p>
+</footer>
+
+</html>

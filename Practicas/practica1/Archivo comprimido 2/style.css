@@ -1,0 +1,56 @@
+html{
+	height:100%;
+}
+body{
+	width: 100%;
+    height: 100%;
+}
+
+header{
+	background-color: rosybrown;
+	/*margin: 10px 5px 10px 5px;
+	border: 2px solid black;
+	padding: 10px 10px 10px 10px;*/
+
+	border:solid;
+	color: black;
+	width: 100%;
+	height:30%; /* Añado esto para delimitarle el largo a la cabecera*/
+}
+
+#cab_logo{
+  	/*height: 150px;
+  	width: 300px;*/
+	width:30%;
+	height:100%;
+	float:left;
+
+}
+
+#logo{
+  	width: 100%;
+  	height:100%;
+}
+
+
+#cab_der{
+  
+  height: 100%;
+  width: 64%;
+	float:left;
+}
+
+#titulo{
+	width: 100%;
+
+}
+
+
+
+
+footer{
+	background-color: rosybrown;
+	margin: 10px 5px 10px 5px;
+	text-align: center;
+	color: white;
+}

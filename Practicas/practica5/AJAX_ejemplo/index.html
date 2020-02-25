@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>Ejemplo AJAX</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script>
+    $(document).ready(function(){
+      $("#campoTexto").keyup(function(){
+        var txt = $("input").val();
+
+        $.ajax({
+                data:  txt,
+                url:   'ajax.php',
+                type:  'post',
+                beforeSend: function () {
+                        $("#respuesta").html("Procesando, espere por favor...");
+                },
+                success:  function (data, status) {
+                        $("#respuesta").html(status);
+                        
+                        valores = JSON.parse(data);
+                        var lista = document.getElementById('consejos');
+                        lista.innerHTML = "";
+                          
+                        for (i = 0 ; i < valores.length ; i++) {
+                          var option = document.createElement('option');
+                          option.value = valores[i];
+                          lista.appendChild(option);                         
+                        }
+                }
+        });
+      });
+    });
+    </script>
+
+  </head>
+  
+  <body>
+    <input type="text" id="campoTexto" list="consejos" />
+    
+    <datalist id="consejos">
+      <option value="Apple"></option>
+    </datalist>
+    
+    <p id="respuesta"></p>
+  </body>
+</html>

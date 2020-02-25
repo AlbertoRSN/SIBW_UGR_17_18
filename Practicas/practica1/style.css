@@ -1,0 +1,99 @@
+html{
+	height:100%;
+}
+body{
+	width: 100%;
+    height: 100%;
+    margin: auto auto;
+    background-color: white;
+}
+
+header{
+	background-color: #5DADE2;
+	margin: 10px 5px 10px 5px;
+	border: 2px solid black;
+	padding: 10px 10px 10px 10px;
+
+	border:solid;
+	color: black;
+	width: auto;
+	height:30%; /* Añado esto para delimitarle el largo a la cabecera*/
+}
+
+#cab_logo{
+	width:30%;
+	height:100%;
+	float:left;
+
+}
+
+
+
+#cab_der{
+  
+  	height: 90%;
+  	width: 64%;
+	float:left;
+}
+
+#titulo{
+	width: 90%;
+
+}
+
+#menu_cab{
+	float:right;
+}
+
+nav ul {
+		margin: 0;
+		padding: 50px;
+		list-style: none;
+		padding-right: 20px;
+		padding-top: 120px;
+		
+	}
+	nav ul li {
+			display: inline-block;
+			line-height: 15px;
+		}
+		nav ul li a {
+				display: block;
+				padding: 0 15px;
+				text-decoration: none;
+				color:white;
+				padding-bottom: 5px;
+				padding-top: 5px;
+				border: 1px solid black;
+				background-color: #1883ba;
+			}
+			nav ul li a:hover {
+					background: #0b76a6;
+				}
+
+
+#footLogo{
+	width: 16%;
+	height: 16%;
+}
+
+footer{
+	background-color: #5DADE2  ;
+	margin: 10px 5px 10px 5px;
+	text-align: center;
+	color: grey;
+	width: 100%;
+	clear: both; /*No permite posicionar cosas ni a su izquierda ni a su derecha*/
+}
+
+#seccion{
+	background-color: yellow;
+}
+
+#lateral-izq{
+	float: left;
+	margin-left: 3%;
+	padding-top: 50%;
+	text-align: center;
+	background-color: red;
+}

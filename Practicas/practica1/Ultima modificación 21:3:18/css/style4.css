@@ -1,0 +1,215 @@
+html{
+	height: 100%;
+	width: 100%;
+	background-color: lightgrey;	
+}
+
+header{
+	height: 30%;
+	
+	background-color: grey;
+	margin: 0% 1% 1% 1%;
+	background-blend-mode: 
+}
+
+#logo-cab{
+	padding-top: 10px;
+	float:left;
+	max-width: 17%;
+	height: auto;
+}
+
+#titulo-cab{
+	float: left;
+	padding-left: 8%;
+	padding-top: 2%;
+}
+
+#menu-cab{
+	float: right;
+	padding-right: 4%;
+	padding-top: 1%;
+}
+
+#menu-cab a{
+	display: inline-block;
+	padding: 0 15px;
+	text-decoration: none;
+	color:black;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	border: 1px solid lightgrey;
+
+	
+}
+
+nav a:hover{
+	background: lightgrey;
+}
+
+
+body{
+	background-color: lightgrey;
+	padding-top: 1%;
+	height: 100%;
+}
+
+#cuerpo_principal{
+	background-color: lightgrey;
+	margin: 0% 1% 0% 1%;
+	height: auto;
+}
+/*
+.menu_lateral{
+	background-color: grey;
+	width: 25%;
+	height: 98.5%;
+	border: solid;
+	float: left;
+	overflow: hidden;
+}*/
+
+.vertical-menu {
+    background-color: grey;
+    width: 20%;
+    height: auto;
+    
+    float: left;
+    text-align: center;
+}
+
+.vertical-menu a {
+    background-color: grey; /* Grey background color */
+    color: black; /* Black text color */
+    display: block; /* Make the links appear below each other */
+    padding: 10%; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+    text-align: center;
+    padding-right: 25%;
+
+}
+
+.vertical-menu a:hover {
+    background-color: lightgrey; /* Dark grey background on mouse-over */
+    width: 45%;
+}
+
+
+#contenido-principal{
+	float:left;
+	height: 100%;
+	width: 78.2%;
+
+	background-color: lightgrey;
+	margin-left: 1%;
+}
+
+
+.imagen-contenido{
+    float:left;
+    width:25.4%;
+    height:35.3%;
+    padding:3%;
+    text-align: center;
+}
+
+.texto{
+	text-decoration: none;
+	color: black;
+
+}
+
+
+#fila1{
+	display: inline-block;
+
+}
+
+#fila2{
+	display: inline-block;
+
+}
+
+
+.im{
+    width:100%;
+    height:100%;
+    text-align: center;
+}
+
+
+.im:hover{
+	background-color: grey;
+}
+
+
+footer{
+	padding: 10px 10px 10px 10px;
+	color: lightgrey;
+	background-color: grey;
+	clear: both;
+	text-align: center;
+	margin: 1% 1% 1% 1%;
+}
+
+#footLogo{
+	height: 15%;
+	width: 15%;
+}
+
+/*------------------------OBRA--------------------*/
+#Titulo {
+	float: left;
+	text-align:center;
+	width: 79%;
+}
+/*<img id="fondo_lateral" src="imgs/fondo_lateral.jpg"/>*/
+#contenido-principal-obra{
+	float:left;
+	height: auto;
+	width: 40%;
+	padding-right:1%;
+	padding-left:1%;
+	background-color: lightgrey;
+	margin-left: 1%;
+}
+
+#Fotos_obra{
+	height: 20%;
+	width: 20%;
+	float:right;
+	text-align:center;
+	font-style: italic;
+	font-size: 80%;
+	margin-left: 1%;
+}
+
+#imagen_obra1{
+	width:100%;
+	height:100%;
+}
+
+#imagen_obra2{
+	width:100%;
+	height:100%;
+}
+
+
+#fc{
+	height: 5%;
+	width:5% ;
+}
+
+#tw{
+	height: 5%;
+	width:5% ;
+}
+
+#impresora{
+	height: 3%;
+	width: 3%;
+}
+
+#Formulario{
+	
+}
